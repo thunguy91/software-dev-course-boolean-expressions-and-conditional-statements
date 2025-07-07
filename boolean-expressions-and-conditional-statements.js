@@ -42,6 +42,30 @@ if (choice === "mountains" && hasTorch) {
   console.log("You get lost and wander aimlessly.");
 }
 
+const hasSword = false;
+const haveCoins = true;
+
+console.log("You come across an ogre who offers his compass for 5 coins.");
+const choice2 = readline.question("Do you want to make this trade?");
+
+if (choice2 === "yes" && haveCoins) {
+  console.log("Successful trade! Continue your journey.");
+
+} else if (choice2 === "yes" && !haveCoins) {
+  console.log("The ogre left you in the dust. You continue on your journey.");
+
+} else if (choice2 === "no" && !hasSword || !haveCoins) {
+  console.log("You decide to fight the ogre with your sword.");
+
+  if (!hasSword) {
+    console.log("What fortunate luck! You've beat the ogre! Now pick up the compass and be on your way! Hurry!")
+  } else (console.log("What an unfortunate end. Game over!"))
+
+} else if (choice2 === "no" && haveCoins) {
+  console.log("You refused the trade. Continue on your journey.");
+}
+
+
 /* 
 
 Add Customization and expand the game:
